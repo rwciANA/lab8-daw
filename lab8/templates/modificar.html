@@ -1,22 +1,13 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Modificar Destino</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
-</head>
-<body>
-<div class="container mt-5">
-    <h2>Modificar Destino Turístico</h2>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-warning">Actualizar</button>
-        <a href="{% url 'index' %}" class="btn btn-secondary">Cancelar</a>
-    </form>
-</div>
-</body>
-</html>
+{% extends 'base_crud.html' %}
+{% block title %}Modificar Destino{% endblock %}
+{% block content %}
+<h2><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modificar Destino Turístico</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="mt-4">
+        <button type="submit" class="btn btn-warning"><i class="fa fa-save"></i> Actualizar</button>
+        <a href="{% url 'index' %}" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
+    </div>
+</form>
+{% endblock %}

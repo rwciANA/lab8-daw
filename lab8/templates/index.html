@@ -36,7 +36,7 @@
 										<li><a href="{% url 'agregar' %}">Agregar Destino</a></li>
 									</ul>
 								</nav>
-								<div class="header_phone ml-auto">Llámamos: 00-56 445 678 33</div>
+								<div class="header_phone ml-auto">Llámamos: +51 987 654 321</div>
 
 								<!-- Hamburger -->
 
@@ -80,7 +80,7 @@
 				</ul>
 			</div>
 			<div class="menu_social">
-				<div class="menu_phone ml-auto">Llámamos: 00-56 445 678 33</div>
+				<div class="menu_phone ml-auto">Llámamos: +51 987 654 321</div>
 				<ul class="d-flex flex-row align-items-start justify-content-start">
 					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -290,6 +290,12 @@
 										<a href="{% url 'eliminar' dest.id %}" class="btn btn-sm btn-danger">Eliminar</a>
 									</div>
 								</div>
+							</div>
+							{% empty %}
+							<div class="col text-center py-5">
+								<h4>No hay destinos disponibles</h4>
+								<p>Agrega tu primer destino turístico.</p>
+								<a href="{% url 'agregar' %}" class="btn btn-primary">Agregar Destino</a>
 							</div>
 
 							{% endfor %}
@@ -528,8 +534,8 @@
 													<div class="footer_contact_title">llámanos</div>
 													<div class="footer_contact_list">
 														<ul>
-															<li>Teléfono: +44 5567 32 664 567</li>
-															<li>Móvil: +44 5567 89 3322 332</li>
+															<li>Teléfono: +51 1 234 5678</li>
+															<li>Móvil: +51 987 654 321</li>
 														</ul>
 													</div>
 												</div>

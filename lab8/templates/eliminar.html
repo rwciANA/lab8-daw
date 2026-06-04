@@ -1,22 +1,16 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Eliminar Destino</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
-</head>
-<body>
-<div class="container mt-5">
-    <h2>Eliminar Destino Turístico</h2>
-    <p>¿Estás seguro de eliminar <strong>{{ destino.nombreCiudad }}</strong>?</p>
-    <form method="POST">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Eliminar</button>
-        <a href="{% url 'index' %}" class="btn btn-secondary">Cancelar</a>
-    </form>
+{% extends 'base_crud.html' %}
+{% block title %}Eliminar Destino{% endblock %}
+{% block content %}
+<h2><i class="fa fa-trash" aria-hidden="true"></i> Eliminar Destino Turístico</h2>
+<p class="lead">¿Estás seguro de eliminar <strong>{{ destino.nombreCiudad }}</strong>?</p>
+<div class="alert alert-danger">
+    <i class="fa fa-exclamation-triangle"></i> Esta acción no se puede deshacer.
 </div>
-</body>
-</html>
+<form method="POST">
+    {% csrf_token %}
+    <div class="mt-4">
+        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar</button>
+        <a href="{% url 'index' %}" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
+    </div>
+</form>
+{% endblock %}
