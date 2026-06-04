@@ -1,12 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-	<title>Travello</title>
+	<title>Destinos Turísticos</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Travello template project">
+	<meta name="description" content="Destinos Turísticos">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
 	<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
@@ -29,22 +29,14 @@
 					<div class="col">
 						<div class="header_content d-flex flex-row align-items-center justify-content-start">
 							<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
-								<div class="logo"><a href="index.html">Travello</a></div>
+								<div class="logo"><a href="{% url 'index' %}">Destinos</a></div>
 								<nav class="main_nav">
 									<ul class="d-flex flex-row align-items-start justify-content-start">
-										<li class="active"><a href="{% url 'index' %}">Home</a></li>
-										<li><a href="{% url 'agregar' %}">Add Destination</a></li>
-
-										{% if user.is_authenticated %}
-										<li>Hello, {{user.first_name}}</li>
-										<li><a href="accounts/logout">Logout</a></li>
-										{% else %}	
-										<li><a href="accounts/register">Register</a></li>
-										<li><a href="accounts/login">Login</a></li>
-										{% endif %}
+										<li class="active"><a href="{% url 'index' %}">Inicio</a></li>
+										<li><a href="{% url 'agregar' %}">Agregar Destino</a></li>
 									</ul>
 								</nav>
-								<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+								<div class="header_phone ml-auto">Llámamos: 00-56 445 678 33</div>
 
 								<!-- Hamburger -->
 
@@ -73,7 +65,7 @@
 
 		<div class="menu">
 			<div class="menu_header d-flex flex-row align-items-center justify-content-start">
-				<div class="menu_logo"><a href="index.html">Travello</a></div>
+				<div class="menu_logo"><a href="{% url 'index' %}">Destinos</a></div>
 				<div class="menu_close_container ml-auto">
 					<div class="menu_close">
 						<div></div>
@@ -83,15 +75,12 @@
 			</div>
 			<div class="menu_content">
 				<ul>
-					<li><a href="inex.html">Home</a></li>
-					<li><a href="about.html">About us</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="news.html">News</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="{% url 'index' %}">Inicio</a></li>
+					<li><a href="{% url 'agregar' %}">Agregar Destino</a></li>
 				</ul>
 			</div>
 			<div class="menu_social">
-				<div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
+				<div class="menu_phone ml-auto">Llámamos: 00-56 445 678 33</div>
 				<ul class="d-flex flex-row align-items-start justify-content-start">
 					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -121,7 +110,7 @@
 									<div class="col">
 										<div class="home_slider_content">
 											<div class="home_title">
-												<h2>Let us take you away</h2>
+												<h2>Descubre tu próximo destino</h2>
 											</div>
 										</div>
 									</div>
@@ -140,7 +129,7 @@
 									<div class="col">
 										<div class="home_slider_content">
 											<div class="home_title">
-												<h2>Let us take you away</h2>
+												<h2>Descubre tu próximo destino</h2>
 											</div>
 										</div>
 									</div>
@@ -159,7 +148,7 @@
 									<div class="col">
 										<div class="home_slider_content">
 											<div class="home_title">
-												<h2>Let us take you away</h2>
+												<h2>Descubre tu próximo destino</h2>
 											</div>
 										</div>
 									</div>
@@ -172,9 +161,9 @@
 
 				<div class="home_page_nav">
 					<ul class="d-flex flex-column align-items-end justify-content-end">
-						<li><a href="#" data-scroll-to="#destinations">Offers<span>01</span></a></li>
-						<li><a href="#" data-scroll-to="#testimonials">Testimonials<span>02</span></a></li>
-						<li><a href="#" data-scroll-to="#news">Latest<span>03</span></a></li>
+						<li><a href="#" data-scroll-to="#destinations">Destinos<span>01</span></a></li>
+						<li><a href="#" data-scroll-to="#testimonials">Testimonios<span>02</span></a></li>
+						<li><a href="#" data-scroll-to="#news">Noticias<span>03</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -187,20 +176,20 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_search_container">
-							<div class="home_search_title">Search for your trip</div>
+							<div class="home_search_title">Busca tu viaje</div>
 							<div class="home_search_content">
 								<form action="#" class="home_search_form" id="home_search_form">
 									<div
 										class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<input type="text" class="search_input search_input_1" placeholder="City"
+										<input type="text" class="search_input search_input_1" placeholder="Ciudad"
 											required="required">
-										<input type="text" class="search_input search_input_2" placeholder="Departure"
+										<input type="text" class="search_input search_input_2" placeholder="Salida"
 											required="required">
-										<input type="text" class="search_input search_input_3" placeholder="Arrival"
+										<input type="text" class="search_input search_input_3" placeholder="Llegada"
 											required="required">
-										<input type="text" class="search_input search_input_4" placeholder="Budget"
+										<input type="text" class="search_input search_input_4" placeholder="Presupuesto"
 											required="required">
-										<button class="home_search_button">search</button>
+										<button class="home_search_button">buscar</button>
 									</div>
 								</form>
 							</div>
@@ -225,37 +214,35 @@
 									<div class="intro_item d-flex flex-row align-items-end justify-content-start">
 										<div class="intro_icon"><img src="{% static 'images/beach.svg' %}" alt=""></div>
 										<div class="intro_content">
-											<div class="intro_title">Top Destinations</div>
+											<div class="intro_title">Mejores Destinos</div>
 											<div class="intro_subtitle">
-												<p>Nulla pretium tincidunt felis, nec.</p>
+												<p>Los lugares más increíbles.</p>
 											</div>
 										</div>
 									</div>
 								</div>
 
-								<!-- Intro Item -->
 								<div class="col-lg-4 intro_col">
 									<div class="intro_item d-flex flex-row align-items-end justify-content-start">
 										<div class="intro_icon"><img src="{% static 'images/wallet.svg' %}" alt="">
 										</div>
 										<div class="intro_content">
-											<div class="intro_title">The Best Prices</div>
+											<div class="intro_title">Mejores Precios</div>
 											<div class="intro_subtitle">
-												<p>Sollicitudin mauris lobortis in.</p>
+												<p>Los mejores precios del mercado.</p>
 											</div>
 										</div>
 									</div>
 								</div>
 
-								<!-- Intro Item -->
 								<div class="col-lg-4 intro_col">
 									<div class="intro_item d-flex flex-row align-items-end justify-content-start">
 										<div class="intro_icon"><img src="{% static 'images/suitcase.svg' %}" alt="">
 										</div>
 										<div class="intro_content">
-											<div class="intro_title">Amazing Services</div>
+											<div class="intro_title">Servicios Increíbles</div>
 											<div class="intro_subtitle">
-												<p>Nulla pretium tincidunt felis, nec.</p>
+												<p>Todo incluido para tu viaje.</p>
 											</div>
 										</div>
 									</div>
@@ -274,9 +261,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col text-center">
-						<div class="section_subtitle">simply amazing places</div>
+						<div class="section_subtitle">lugares simplemente increíbles</div>
 						<div class="section_title">
-							<h2>Popular Destinations</h2>
+							<h2>Destinos Populares</h2>
 						</div>
 					</div>
 				</div>
@@ -289,7 +276,7 @@
 								<div class="destination_image">
 									<img src="{{dest.imagenCiudad.url}}" alt="">
 									{% if dest.ofertaTour %}
-									<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+									<div class="spec_offer text-center"><a href="#">Oferta Especial</a></div>
 									{% endif %}
 								</div>
 								<div class="destination_content">
@@ -297,10 +284,10 @@
 									<div class="destination_subtitle">
 										<p>{{dest.descripcionCiudad}}</p>
 									</div>
-									<div class="destination_price">From ${{dest.precioTour}}</div>
+									<div class="destination_price">S/ {{dest.precioTour}}</div>
 									<div class="destination_price">
-										<a href="{% url 'modificar' dest.id %}" class="btn btn-sm btn-warning">Edit</a>
-										<a href="{% url 'eliminar' dest.id %}" class="btn btn-sm btn-danger">Delete</a>
+										<a href="{% url 'modificar' dest.id %}" class="btn btn-sm btn-warning">Editar</a>
+										<a href="{% url 'eliminar' dest.id %}" class="btn btn-sm btn-danger">Eliminar</a>
 									</div>
 								</div>
 							</div>
@@ -321,9 +308,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col text-center">
-						<div class="section_subtitle">simply amazing places</div>
+						<div class="section_subtitle">opiniones de nuestros clientes</div>
 						<div class="section_title">
-							<h2>Testimonials</h2>
+							<h2>Testimonios</h2>
 						</div>
 					</div>
 				</div>
@@ -336,48 +323,37 @@
 
 								<!-- Slide -->
 								<div class="owl-item text-center">
-									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur
-										adipiscing elit.
-										lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur
-										quis vehicula
-										odio.</div>
+									<div class="testimonial">Excelente servicio y los mejores destinos. Muy recomendado.
+										</div>
 									<div class="testimonial_author">
 										<div
 											class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
-											<div>john turner,</div>
-											<div>client</div>
+											<div>juan pérez,</div>
+											<div>cliente</div>
 										</div>
 									</div>
 								</div>
 
-								<!-- Slide -->
 								<div class="owl-item text-center">
-									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur
-										adipiscing elit.
-										lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur
-										quis vehicula
-										odio.</div>
+									<div class="testimonial">Viaje increíble, todo perfecto. Volveré a viajar con ellos.
+										</div>
 									<div class="testimonial_author">
 										<div
 											class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
-											<div>john turner,</div>
-											<div>client</div>
+											<div>maría garcía,</div>
+											<div>cliente</div>
 										</div>
 									</div>
 								</div>
 
-								<!-- Slide -->
 								<div class="owl-item text-center">
-									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur
-										adipiscing elit.
-										lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur
-										quis vehicula
-										odio.</div>
+									<div class="testimonial">Precios accesibles y atención de primera. Muy contento.
+										</div>
 									<div class="testimonial_author">
 										<div
 											class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
-											<div>john turner,</div>
-											<div>client</div>
+											<div>carlos lópez,</div>
+											<div>cliente</div>
 										</div>
 									</div>
 								</div>
@@ -389,9 +365,9 @@
 			</div>
 			<div class="test_nav">
 				<ul class="d-flex flex-column align-items-end justify-content-end">
-					<li><a href="#">City Breaks Clients<span>01</span></a></li>
-					<li><a href="#">Cruises Clients<span>02</span></a></li>
-					<li><a href="#">All Inclusive Clients<span>03</span></a></li>
+					<li><a href="#">Clientes Ciudad<span>01</span></a></li>
+					<li><a href="#">Clientes Crucero<span>02</span></a></li>
+					<li><a href="#">Clientes Todo Incluido<span>03</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -411,48 +387,42 @@
 								<div class="news_post_content">
 									<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
 										<div>02</div>
-										<div>june</div>
+										<div>jun</div>
 									</div>
-									<div class="news_post_title"><a href="#">Best tips to travel light</a>
+									<div class="news_post_title"><a href="#">Mejores consejos para viajar ligero</a>
 									</div>
 									<div class="news_post_category">
 										<ul>
-											<li><a href="#">lifestyle & travel</a></li>
+											<li><a href="#">estilo de vida & viajes</a></li>
 										</ul>
 									</div>
 									<div class="news_post_text">
-										<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget,
-											tristique at
-											leo. Vivamus massa.Tempor massa et laoreet.</p>
+										<p>Descubre cómo empacar menos y disfrutar más de tu viaje.</p>
 									</div>
 								</div>
 							</div>
 
-							<!-- News Post -->
 							<div
 								class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
 								<div class="news_post_image"><img src="{% static 'images/news_2.jpg' %}" alt=""></div>
 								<div class="news_post_content">
 									<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
 										<div>01</div>
-										<div>june</div>
+										<div>jun</div>
 									</div>
-									<div class="news_post_title"><a href="#">Best tips to travel light</a>
+									<div class="news_post_title"><a href="#">Los destinos más visitados del año</a>
 									</div>
 									<div class="news_post_category">
 										<ul>
-											<li><a href="#">lifestyle & travel</a></li>
+											<li><a href="#">tendencias & viajes</a></li>
 										</ul>
 									</div>
 									<div class="news_post_text">
-										<p>Tempor massa et laoreet malesuada. Pellentesque sit amet
-											elementum ccumsan
-											sit amet mattis eget, tristique at leo.</p>
+										<p>Conoce los lugares que todos quieren visitar esta temporada.</p>
 									</div>
 								</div>
 							</div>
 
-							<!-- News Post -->
 							<div
 								class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
 								<div class="news_post_image"><img src="{% static 'images/news_3.jpg' %}" alt=""></div>
@@ -461,17 +431,15 @@
 										<div>29</div>
 										<div>may</div>
 									</div>
-									<div class="news_post_title"><a href="#">Best tips to travel light</a>
+									<div class="news_post_title"><a href="#">Consejos para viajar seguro</a>
 									</div>
 									<div class="news_post_category">
 										<ul>
-											<li><a href="#">lifestyle & travel</a></li>
+											<li><a href="#">seguridad & viajes</a></li>
 										</ul>
 									</div>
 									<div class="news_post_text">
-										<p>Vivamus massa.Tempor massa et laoreet malesuada. Aliquam nulla
-											nisl, accumsan
-											sit amet mattis.</p>
+										<p>Todo lo que necesitas saber para viajar tranquilo.</p>
 									</div>
 								</div>
 							</div>
@@ -493,8 +461,8 @@
 							<div class="travello_container">
 								<a href="#">
 									<div class="d-flex flex-column align-items-center justify-content-end">
-										<span class="travello_title">Get a 20% Discount</span>
-										<span class="travello_subtitle">Buy Your Vacation Online Now</span>
+										<span class="travello_title">Obtén 20% de Descuento</span>
+										<span class="travello_subtitle">Compra tus vacaciones online ahora</span>
 									</div>
 								</a>
 							</div>
@@ -514,11 +482,10 @@
 									<div class="col">
 										<div class="newsletter">
 											<div class="newsletter_title_container text-center">
-												<div class="newsletter_title">Subscribe to our newsletter to
-													get the latest
-													trends &
-													news</div>
-												<div class="newsletter_subtitle">Join our database NOW!
+												<div class="newsletter_title">Suscríbete a nuestro boletín para
+													recibir las últimas
+													tendencias y noticias</div>
+												<div class="newsletter_subtitle">¡Únete a nuestra base de datos AHORA!
 												</div>
 											</div>
 											<div class="newsletter_form_container">
@@ -529,18 +496,18 @@
 														class="d-flex flex-md-row flex-column align-items-start justify-content-between">
 														<div><input type="text"
 																class="newsletter_input newsletter_input_name"
-																id="newsletter_input_name" placeholder="Name"
+																id="newsletter_input_name" placeholder="Nombre"
 																required="required">
 															<div class="input_border"></div>
 														</div>
 														<div><input type="email"
 																class="newsletter_input newsletter_input_email"
-																id="newsletter_input_email" placeholder="Your e-mail"
+																id="newsletter_input_email" placeholder="Tu correo"
 																required="required">
 															<div class="input_border"></div>
 														</div>
 													</div>
-													<div><button class="newsletter_button">subscribe</button>
+													<div><button class="newsletter_button">suscribir</button>
 													</div>
 												</form>
 											</div>
@@ -558,11 +525,11 @@
 													<div class="footer_contact_icon"><img
 															src="{% static 'images/sign.svg' %}" alt="">
 													</div>
-													<div class="footer_contact_title">give us a call</div>
+													<div class="footer_contact_title">llámanos</div>
 													<div class="footer_contact_list">
 														<ul>
-															<li>Office Landline: +44 5567 32 664 567</li>
-															<li>Mobile: +44 5567 89 3322 332</li>
+															<li>Teléfono: +44 5567 32 664 567</li>
+															<li>Móvil: +44 5567 89 3322 332</li>
 														</ul>
 													</div>
 												</div>
@@ -575,10 +542,10 @@
 													<div class="footer_contact_icon"><img
 															src="{% static 'images/trekking.svg' %}" alt="">
 													</div>
-													<div class="footer_contact_title">come & drop by</div>
+													<div class="footer_contact_title">visítanos</div>
 													<div class="footer_contact_list">
 														<ul style="max-width:190px">
-															<li>4124 Barnes Street, Sanford, FL 32771</li>
+															<li>Av. Principal 123, Lima, Perú</li>
 														</ul>
 													</div>
 												</div>
@@ -591,12 +558,12 @@
 													<div class="footer_contact_icon"><img
 															src="{% static 'images/around.svg' %}" alt="">
 													</div>
-													<div class="footer_contact_title">send us a message
+													<div class="footer_contact_title">escríbenos
 													</div>
 													<div class="footer_contact_list">
 														<ul>
-															<li>youremail@gmail.com</li>
-															<li>Office@yourbusinessname.com</li>
+															<li>contacto@destinos.com</li>
+															<li>ventas@destinos.com</li>
 														</ul>
 													</div>
 												</div>
